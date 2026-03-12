@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoonTech | Inteligência Digital e Comercial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold-primary: #D4AF37;
+            --gold-bright: #FFD700;
+            --black-deep: #050505;
+            --black-surface: #121212;
+            --gray-text: #b0b0b0;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--black-deep);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Efeito de Revelação (Scroll Reveal) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background: radial-gradient(circle at center, #1a1a1a 0%, var(--black-deep) 100%);
+            position: relative;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+        }
+
+        .logo {
+            width: 150px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: var(--gray-text);
+            max-width: 700px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .btn-gold {
+            padding: 18px 45px;
+            background: linear-gradient(45deg, var(--gold-primary), var(--gold-bright));
+            color: var(--black-deep);
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 2px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-gold:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Seção de Conteúdo Estratégico */
+        section {
+            padding: 100px 10%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .grid-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: var(--black-surface);
+            padding: 40px;
+            border-left: 3px solid var(--gold-primary);
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            background: #1a1a1a;
+            transform: translateY(-10px);
+        }
+
+        .service-card h3 {
+            color: var(--gold-primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--gray-text);
+        }
+
+        /* Destaque IA e Inteligência Comercial */
+        .highlight-box {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            border: 1px solid #333;
+            padding: 60px;
+            border-radius: 4px;
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .highlight-box h2 {
+            color: var(--gold-primary);
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Footer e CTA Final */
+        footer {
+            background: #000;
+            padding: 80px 10%;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        .final-cta h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .whatsapp-big {
+            display: block;
+            margin-top: 30px;
+            font-size: 2rem;
+            color: var(--gold-primary);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        @media (max-width: 900px) {
+            .highlight-box { grid-template-columns: 1fr; padding: 30px; }
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="https://i.ibb.co/RBLkKLp/LOGO-4.png" alt="MoonTech" class="logo">
+        <h1 class="reveal">MoonTech</h1>
+        <p class="hero-tagline reveal">Engenharia de Software, IA aplicada e Inteligência Comercial para empresas que não aceitam o comum.</p>
+        <a href="https://wa.me/5521985996555" class="btn-gold reveal">Falar com Especialista</a>
+    </header>
+
+    <section>
+        <h2 class="reveal" style="text-align:center; font-family:'Playfair Display'; font-size: 2.5rem;">Ecossistema de Soluções</h2>
+        
+        <div class="grid-services">
+            <div class="service-card reveal">
+                <h3>Web Design de Elite</h3>
+                <p>Interfaces exclusivas que equilibram estética de luxo com usabilidade de alta performance. Seu site não é um custo, é seu melhor vendedor 24h.</p>
+            </div>
+            
+            <div class="service-card reveal">
+                <h3>Tecnologia Escalável</h3>
+                <p>Desenvolvimento de sistemas robustos, APIs e arquitetura de nuvem preparadas para o crescimento exponencial do seu negócio.</p>
+            </div>
+
+            <div class="service-card reveal">
+                <h3>Implementação de IA</h3>
+                <p>Integração de LLMs (como GPT-4), automação de processos e agentes inteligentes que reduzem custos operacionais e aumentam a produtividade.</p>
+            </div>
+
+            <div class="service-card reveal">
+                <h3>Inteligência Comercial</h3>
+                <p>Análise de dados para prospecção, precificação dinâmica e dashboards que transformam números brutos em decisões lucrativas.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="highlight-box reveal">
+            <div>
+                <h2>O Poder dos Dados + IA</h2>
+                <p>Na MoonTech, não implementamos IA apenas por modismo. Nós criamos camadas de <strong>Inteligência Comercial</strong> que permitem ao seu time focar no que importa: fechar negócios.</p>
+                <br>
+                <p>Reduza o erro humano e tome decisões baseadas em evidências matemáticas, não em intuição.</p>
+            </div>
+            <div style="text-align: right;">
+                <img src="https://i.ibb.co/RBLkKLp/LOGO-4.png" style="width: 200px; opacity: 0.2;" alt="Icon MoonTech">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="final-cta reveal">
+            <h2>Pronto para dominar o seu mercado?</h2>
+            <p>A tecnologia certa é a diferença entre ser líder ou ser esquecido.</p>
+            <a href="https://wa.me/5521985996555" class="whatsapp-big">21 98599-6555</a>
+            <br><br>
+            <a href="https://wa.me/5521985996555" class="btn-gold">Iniciar Projeto</a>
+        </div>
+        <p style="margin-top: 60px; color: #444; font-size: 0.8rem;">&copy; 2026 MoonTech. Tecnologia de Vanguarda.</p>
+    </footer>
+
+    <script>
+        // Função para ativar o efeito de revelação ao scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+
+        // Ativar os primeiros elementos no carregamento
+        window.onload = reveal;
+    </script>
+</body>
+</html>
