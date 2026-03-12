@@ -1,266 +1,249 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoonTech | Inteligência Digital e Comercial</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --gold-primary: #D4AF37;
-            --gold-bright: #FFD700;
-            --black-deep: #050505;
-            --black-surface: #121212;
-            --gray-text: #b0b0b0;
-            --white: #ffffff;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--black-deep);
-            color: var(--white);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Efeito de Revelação (Scroll Reveal) */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Hero Section */
-        header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-            background: radial-gradient(circle at center, #1a1a1a 0%, var(--black-deep) 100%);
-            position: relative;
-        }
-
-        header::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
-        }
-
-        .logo {
-            width: 150px;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            color: var(--gold-primary);
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 15px;
-        }
-
-        .hero-tagline {
-            font-size: 1.2rem;
-            color: var(--gray-text);
-            max-width: 700px;
-            margin-bottom: 40px;
-            font-weight: 300;
-        }
-
-        .btn-gold {
-            padding: 18px 45px;
-            background: linear-gradient(45deg, var(--gold-primary), var(--gold-bright));
-            color: var(--black-deep);
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 2px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
-        }
-
-        .btn-gold:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
-        }
-
-        /* Seção de Conteúdo Estratégico */
-        section {
-            padding: 100px 10%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .grid-services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .service-card {
-            background: var(--black-surface);
-            padding: 40px;
-            border-left: 3px solid var(--gold-primary);
-            transition: 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card:hover {
-            background: #1a1a1a;
-            transform: translateY(-10px);
-        }
-
-        .service-card h3 {
-            color: var(--gold-primary);
-            margin-bottom: 15px;
-            font-size: 1.5rem;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .service-card p {
-            font-size: 0.95rem;
-            color: var(--gray-text);
-        }
-
-        /* Destaque IA e Inteligência Comercial */
-        .highlight-box {
-            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
-            border: 1px solid #333;
-            padding: 60px;
-            border-radius: 4px;
-            margin-top: 50px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .highlight-box h2 {
-            color: var(--gold-primary);
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-
-        /* Footer e CTA Final */
-        footer {
-            background: #000;
-            padding: 80px 10%;
-            text-align: center;
-            border-top: 1px solid #222;
-        }
-
-        .final-cta h2 { font-size: 2.5rem; margin-bottom: 20px; }
-        .whatsapp-big {
-            display: block;
-            margin-top: 30px;
-            font-size: 2rem;
-            color: var(--gold-primary);
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        @media (max-width: 900px) {
-            .highlight-box { grid-template-columns: 1fr; padding: 30px; }
-            h1 { font-size: 2.5rem; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <img src="https://i.ibb.co/RBLkKLp/LOGO-4.png" alt="MoonTech" class="logo">
-        <h1 class="reveal">MoonTech</h1>
-        <p class="hero-tagline reveal">Engenharia de Software, IA aplicada e Inteligência Comercial para empresas que não aceitam o comum.</p>
-        <a href="https://wa.me/5521985996555" class="btn-gold reveal">Falar com Especialista</a>
-    </header>
-
-    <section>
-        <h2 class="reveal" style="text-align:center; font-family:'Playfair Display'; font-size: 2.5rem;">Ecossistema de Soluções</h2>
-        
-        <div class="grid-services">
-            <div class="service-card reveal">
-                <h3>Web Design de Elite</h3>
-                <p>Interfaces exclusivas que equilibram estética de luxo com usabilidade de alta performance. Seu site não é um custo, é seu melhor vendedor 24h.</p>
-            </div>
-            
-            <div class="service-card reveal">
-                <h3>Tecnologia Escalável</h3>
-                <p>Desenvolvimento de sistemas robustos, APIs e arquitetura de nuvem preparadas para o crescimento exponencial do seu negócio.</p>
-            </div>
-
-            <div class="service-card reveal">
-                <h3>Implementação de IA</h3>
-                <p>Integração de LLMs (como GPT-4), automação de processos e agentes inteligentes que reduzem custos operacionais e aumentam a produtividade.</p>
-            </div>
-
-            <div class="service-card reveal">
-                <h3>Inteligência Comercial</h3>
-                <p>Análise de dados para prospecção, precificação dinâmica e dashboards que transformam números brutos em decisões lucrativas.</p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="highlight-box reveal">
-            <div>
-                <h2>O Poder dos Dados + IA</h2>
-                <p>Na MoonTech, não implementamos IA apenas por modismo. Nós criamos camadas de <strong>Inteligência Comercial</strong> que permitem ao seu time focar no que importa: fechar negócios.</p>
-                <br>
-                <p>Reduza o erro humano e tome decisões baseadas em evidências matemáticas, não em intuição.</p>
-            </div>
-            <div style="text-align: right;">
-                <img src="https://i.ibb.co/RBLkKLp/LOGO-4.png" style="width: 200px; opacity: 0.2;" alt="Icon MoonTech">
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="final-cta reveal">
-            <h2>Pronto para dominar o seu mercado?</h2>
-            <p>A tecnologia certa é a diferença entre ser líder ou ser esquecido.</p>
-            <a href="https://wa.me/5521985996555" class="whatsapp-big">21 98599-6555</a>
-            <br><br>
-            <a href="https://wa.me/5521985996555" class="btn-gold">Iniciar Projeto</a>
-        </div>
-        <p style="margin-top: 60px; color: #444; font-size: 0.8rem;">&copy; 2026 MoonTech. Tecnologia de Vanguarda.</p>
-    </footer>
-
+    <title>MoonTech | Alta Performance e Tecnologia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Função para ativar o efeito de revelação ao scroll
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            300: '#FCE68A',
+                            400: '#FBBF24',
+                            500: '#F59E0B',
+                            600: '#D97706',
+                            700: '#B45309',
+                            DEFAULT: '#FFD700', // Dourado principal
+                        },
+                        dark: {
+                            900: '#0a0a0a',
+                            800: '#171717',
+                            700: '#262626',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    }
                 }
             }
         }
-
-        window.addEventListener("scroll", reveal);
-
-        // Ativar os primeiros elementos no carregamento
-        window.onload = reveal;
     </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;700;800&display=swap');
+
+        body {
+            background-color: #050505;
+            color: #f3f4f6;
+            background-image: radial-gradient(circle at 50% 0%, #1a1a1a 0%, #050505 70%);
+        }
+
+        /* Efeitos Neon Gold */
+        .neon-text {
+            color: #FFD700;
+            text-shadow: 
+                0 0 2px #fff,
+                0 0 5px #FFD700,
+                0 0 15px #FFD700,
+                0 0 30px #B8860B;
+        }
+
+        .neon-border {
+            border: 1px solid #FFD700;
+            box-shadow: 
+                0 0 5px rgba(255, 215, 0, 0.5),
+                inset 0 0 5px rgba(255, 215, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .neon-border:hover {
+            box-shadow: 
+                0 0 15px rgba(255, 215, 0, 0.8),
+                inset 0 0 10px rgba(255, 215, 0, 0.5);
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: linear-gradient(145deg, #111 0%, #0a0a0a 100%);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(255, 215, 0, 0.3);
+            border-color: rgba(255, 215, 0, 0.5);
+        }
+
+        /* Animação de pulso sutil para botões principais */
+        @keyframes neonPulse {
+            0% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.4), inset 0 0 5px rgba(255, 215, 0, 0.2); }
+            50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.7), inset 0 0 10px rgba(255, 215, 0, 0.4); }
+            100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.4), inset 0 0 5px rgba(255, 215, 0, 0.2); }
+        }
+
+        .btn-neon-pulse {
+            animation: neonPulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold-500 selection:text-black">
+
+    <!-- Navegação -->
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <!-- Símbolo abstrato simulando o logo -->
+                    <div class="w-10 h-10 rounded-full neon-border flex items-center justify-center font-heading font-bold text-gold">
+                        &lt;/&gt;
+                    </div>
+                    <span class="font-heading font-bold text-2xl tracking-wider text-white">
+                        MOON<span class="text-gold">TECH</span>
+                    </span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#sobre" class="text-gray-300 hover:text-gold transition-colors text-sm font-medium uppercase tracking-widest">Sobre</a>
+                    <a href="#servicos" class="text-gray-300 hover:text-gold transition-colors text-sm font-medium uppercase tracking-widest">Serviços</a>
+                    <a href="https://wa.me/5521985996555" target="_blank" class="px-6 py-2 rounded-full neon-border text-gold font-medium text-sm tracking-wider uppercase hover:bg-gold hover:text-black transition-all">
+                        Fale Conosco
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-gold hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex items-center min-h-screen">
+        <!-- Elementos decorativos de fundo -->
+        <div class="absolute top-1/4 left-10 w-72 h-72 bg-gold-600 rounded-full mix-blend-screen filter blur-[128px] opacity-20"></div>
+        <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-yellow-600 rounded-full mix-blend-screen filter blur-[128px] opacity-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="font-heading text-5xl md:text-7xl font-bold tracking-tight mb-6">
+                Leve sua marca para o <br />
+                <span class="neon-text">Próximo Nível</span>
+            </h1>
+            <p class="mt-4 max-w-2xl text-xl text-gray-400 mx-auto mb-10 font-light">
+                Criamos sites profissionais, e-commerces de alta performance e implementamos inteligência para alavancar suas conversões.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#servicos" class="px-8 py-4 rounded bg-gold text-black font-bold uppercase tracking-widest hover:bg-white transition-colors duration-300 shadow-[0_0_15px_rgba(255,215,0,0.4)]">
+                    Nossos Serviços
+                </a>
+                <a href="https://wa.me/5521985996555" target="_blank" class="px-8 py-4 rounded border-2 border-gold text-gold font-bold uppercase tracking-widest btn-neon-pulse bg-black/50 backdrop-blur-sm hover:bg-gold hover:text-black transition-all duration-300 flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.827z"/></svg>
+                    21 98599-6555
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços Section -->
+    <section id="servicos" class="py-24 bg-dark-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold tracking-widest text-gold uppercase mb-2">Expertise</h2>
+                <h3 class="font-heading text-3xl md:text-5xl font-bold text-white">Soluções Completas</h3>
+                <div class="w-24 h-1 bg-gold mx-auto mt-6 neon-border"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Card 1: Web Design -->
+                <div class="card-hover border border-white/10 rounded-xl p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-bl-full -z-10 group-hover:bg-gold-500/20 transition-colors"></div>
+                    <div class="w-14 h-14 rounded-lg bg-black border border-gold/50 flex items-center justify-center mb-6 neon-border text-gold">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3 font-heading">Web Design</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Criação de sites profissionais e e-commerces. Focados em velocidade, responsividade e alta taxa de conversão para o seu negócio.
+                    </p>
+                </div>
+
+                <!-- Card 2: Tecnologia -->
+                <div class="card-hover border border-white/10 rounded-xl p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-bl-full -z-10 group-hover:bg-gold-500/20 transition-colors"></div>
+                    <div class="w-14 h-14 rounded-lg bg-black border border-gold/50 flex items-center justify-center mb-6 neon-border text-gold">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3 font-heading">Tecnologia</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Desenvolvimento de sistemas sob medida e infraestrutura de alta performance. Entregamos estabilidade e escalabilidade.
+                    </p>
+                </div>
+
+                <!-- Card 3: IA -->
+                <div class="card-hover border border-white/10 rounded-xl p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-bl-full -z-10 group-hover:bg-gold-500/20 transition-colors"></div>
+                    <div class="w-14 h-14 rounded-lg bg-black border border-gold/50 flex items-center justify-center mb-6 neon-border text-gold">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3 font-heading">Inteligência Artificial</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Automação de processos e agentes inteligentes. Reduza custos operacionais e ofereça atendimento 24/7 de alta qualidade.
+                    </p>
+                </div>
+
+                <!-- Card 4: Inteligência Comercial -->
+                <div class="card-hover border border-white/10 rounded-xl p-8 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-bl-full -z-10 group-hover:bg-gold-500/20 transition-colors"></div>
+                    <div class="w-14 h-14 rounded-lg bg-black border border-gold/50 flex items-center justify-center mb-6 neon-border text-gold">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3 font-heading">Inteligência Comercial</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Análise de dados e estratégias de Growth. Identificamos gargalos e criamos funis de vendas altamente lucrativos.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 relative overflow-hidden border-t border-white/10">
+        <div class="absolute inset-0 bg-gold-900/10"></div>
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="font-heading text-3xl md:text-5xl font-bold text-white mb-6">
+                O que <span class="text-gold uppercase">Você</span> precisa?
+            </h2>
+            <p class="text-xl text-gray-300 mb-10">
+                Seja para modernizar sua presença digital ou automatizar suas vendas com IA, nós temos a solução.
+            </p>
+            <a href="https://wa.me/5521985996555" target="_blank" class="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-gold text-black font-bold uppercase tracking-widest hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_30px_rgba(255,215,0,0.5)]">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.827z"/></svg>
+                Falar com Especialista
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-10 border-t border-white/5 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-center gap-2 mb-4 text-gold">
+                <div class="w-8 h-8 rounded-full border border-gold flex items-center justify-center font-heading font-bold text-xs">
+                    &lt;/&gt;
+                </div>
+                <span class="font-heading font-bold text-xl tracking-wider text-white">MOON<span class="text-gold">TECH</span></span>
+            </div>
+            <p class="text-gray-500 text-sm">
+                &copy; 2026 MoonTech. Alta Performance e Tecnologia. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
 </body>
 </html>
+
